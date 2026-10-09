@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#155e75">
+<meta name="description" content="Practica gratuitamente para los exámenes de validación de estudios de 1.º medio.">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+<title>Mi Ruta de Estudios</title>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand-mark">MR</div>
+  <div><h1>Mi Ruta de Estudios</h1><p>Practica · Aprende · Avanza</p></div>
+  <button id="installBtn" class="install hidden" type="button">Instalar app</button>
+</header>
+<main>
+<section class="welcome panel">
+ <div><span class="eyebrow">VALIDACIÓN DE ESTUDIOS · 1.º MEDIO</span><h2>Tu preparación, paso a paso.</h2>
+ <p>Practica con preguntas, revisa explicaciones y observa tu progreso. Gratis y adaptable a celular o computador.</p></div>
+ <div class="rolebox"><label for="role">Estoy usando la app como</label><select id="role"><option value="student">Estudiante</option><option value="teacher">Docente</option></select><p id="roleHelp">Elige una asignatura y comienza a practicar.</p></div>
+</section>
+<nav class="tabs" aria-label="Secciones">
+ <button class="tab active" data-tab="practice">Practicar</button><button class="tab" data-tab="guides">Guías</button><button class="tab" data-tab="progress">Mi progreso</button><button class="tab teacher-only hidden" data-tab="teacher">Panel docente</button>
+</nav>
+<section id="practice" class="view">
+ <div class="section-head"><div><span class="eyebrow">BANCO DE PREGUNTAS</span><h2>Elige una asignatura</h2></div><span class="pill">5 asignaturas</span></div>
+ <div id="subjectGrid" class="subject-grid"></div>
+ <div class="panel quiz-panel">
+  <div class="quiz-top"><div><span class="eyebrow" id="quizSubject">Lengua y Literatura</span><h2 id="quizTitle">Práctica guiada</h2></div><span id="questionCount" class="pill">Pregunta 1 de 25</span></div>
+  <div class="progress-track"><div id="progressBar" class="progress-fill"></div></div>
+  <p id="questionText" class="question-text">Selecciona una asignatura para comenzar.</p>
+  <div id="options" class="options"></div>
+  <div id="feedback" class="feedback hidden" role="status" aria-live="polite"></div>
+  <div class="quiz-actions"><button id="checkBtn" class="primary" disabled>Revisar respuesta</button><button id="nextBtn" class="secondary hidden">Siguiente pregunta →</button><button id="restartBtn" class="text-btn">Reiniciar práctica</button><button id="examBtn" class="secondary">Iniciar ensayo de 25 preguntas</button></div>
+  <p class="small-note">Modo práctica: retroalimentación inmediata. Ensayo: 25 preguntas y resultado al finalizar.</p>
+ </div>
+</section>
+<section id="guides" class="view hidden">
+ <div class="section-head"><div><span class="eyebrow">CONTENIDOS CLAVE</span><h2>Guías rápidas de estudio</h2></div></div>
+ <div id="guideGrid" class="guide-grid"></div>
+ <div class="panel"><h3>Rutina sugerida de 90 minutos</h3><ol><li>20 min: repasa conceptos de una guía.</li><li>30 min: responde ejercicios sin mirar las respuestas.</li><li>20 min: corrige errores y lee las explicaciones.</li><li>10 min: explica en voz alta lo aprendido.</li><li>10 min: anota dudas y prepara el próximo repaso.</li></ol></div>
+</section>
+<section id="progress" class="view hidden">
+ <div class="section-head"><div><span class="eyebrow">SEGUIMIENTO</span><h2>Mi progreso</h2></div><button id="clearProgress" class="secondary">Borrar progreso</button></div>
+ <div id="progressSummary" class="stats-grid"></div><div id="progressBySubject" class="panel"></div>
+ <div class="panel"><h3>Cómo usar tus resultados</h3><p>Prioriza las asignaturas con menor porcentaje de aciertos. Repite las preguntas incorrectas y explica por qué la alternativa correcta tiene sentido.</p><p class="small-note">Los datos se guardan en este navegador en este dispositivo. No se envían a un servidor ni se sincronizan con otros dispositivos.</p></div>
+</section>
+<section id="teacher" class="view hidden">
+ <div class="section-head"><div><span class="eyebrow">HERRAMIENTAS PARA DOCENTES</span><h2>Panel de seguimiento local</h2></div></div>
+ <div class="panel"><h3>Resumen de práctica en este dispositivo</h3><p>Este panel resume únicamente las respuestas registradas en este navegador. No permite ver datos de otros estudiantes ni sustituye una plataforma escolar con cuentas y consentimiento.</p><div id="teacherSummary"></div><button id="exportBtn" class="primary">Exportar resumen CSV</button></div>
+ <div class="panel"><h3>Sugerencia de uso en aula</h3><ul><li>Invita a cada estudiante a registrar sus resultados en su propio dispositivo.</li><li>Usa los errores frecuentes para planificar un repaso.</li><li>No registres nombres ni información sensible en el dispositivo compartido.</li></ul></div>
+</section>
+<section class="disclaimer"><strong>Importante:</strong> recurso de práctica independiente, no oficial ni afiliado al MINEDUC. El temario compartido indica que cada prueba oficial tiene 25 preguntas y dura 90 minutos; esta app sirve para practicar, no predice ni garantiza resultados oficiales.</section>
+</main>
+<footer><p>Mi Ruta de Estudios · Recurso educativo gratuito</p><p><a href="https://www.curriculumnacional.cl/" target="_blank" rel="noopener">Currículum Nacional</a> · <a href="README.txt">Instrucciones de publicación</a></p></footer>
+<script src="questions.js"></script><script src="app.js"></script>
+</body></html>

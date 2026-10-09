@@ -1,0 +1,18 @@
+{
+  "name": "Mi Ruta de Estudios",
+  "short_name": "Mi Ruta",
+  "description": "Práctica gratuita para validación de estudios de 1.º medio",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f5f8fb",
+  "theme_color": "#155e75",
+  "icons": [
+    {
+      "src": "icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
